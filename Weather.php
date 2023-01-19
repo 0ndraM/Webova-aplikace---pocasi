@@ -7,7 +7,7 @@ if(isset($_POST['param'])){
 function  getPocasi( string $inputVal )
 {
     // API Key
-    $apiKey = "895f5871bd1568b2a67f9dce7cf6d499";
+    $apiKey = "API kEY";
     $url = "https://api.openweathermap.org/data/2.5/weather?q=".$inputVal."&appid=".$apiKey."&units=metric&lang=cz";
     // Get data from API
     $data = json_decode(file_get_contents($url), true);
