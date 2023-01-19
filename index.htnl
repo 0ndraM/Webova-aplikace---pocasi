@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+  <section class="top-banner">
+    <div class="container">
+      <h1 class="heading">Počasí</h1>
+      <select id="mySelect">
+      <option value="">Vyber město</option>
+      <option value="Třebíč">Třébíč</option>
+      <option value="Dubai">Dubaj</option>
+      <option value="New York">New York</option>
+      <option value="Tokyo">Tokio</option>
+      </select>
+    </div>
+  </section>
+  <section class="PHP-section">
+    <div class="container" id="response">
+    </div>
+  </section>
+  <footer class="page-footer">
+
+  </footer></body>
+</html>
