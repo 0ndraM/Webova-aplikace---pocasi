@@ -1,8 +1,13 @@
 <?php
+
+if(isset($_POST['param'])){
+  getPocasi($_POST['param']);
+}
+
 function  getPocasi( string $inputVal )
 {
     // API Key
-    $apiKey = "API KEY";
+    $apiKey = "895f5871bd1568b2a67f9dce7cf6d499";
     $url = "https://api.openweathermap.org/data/2.5/weather?q=".$inputVal."&appid=".$apiKey."&units=metric&lang=cz";
     // Get data from API
     $data = json_decode(file_get_contents($url), true);
@@ -12,6 +17,7 @@ function  getPocasi( string $inputVal )
     $sys = $data['sys'];
     $weather = $data['weather'];
     // Display data
+    echo '<ul class="cities">';
     echo '<li class="city">';
     echo '<h2 class="city-name" data-name="'.$name.','.$sys['country'].'">';
     echo '<span>'.$name.'</span>';
@@ -23,40 +29,7 @@ function  getPocasi( string $inputVal )
     echo '<figcaption>'.$weather[0]['description'].'</figcaption>';
     echo '</figure>';
     echo '</li>';
+    echo '</ul>';
 }
 
-
 ?>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<link rel="stylesheet" href="styles.css"></head>
-<body>
-  <section class="top-banner">
-    <div class="container">
-      <h1 class="heading">Počasí</h1>
-    </div>
-  </section>
-  <section class="PHP-section">
-    <div class="container">
-      <ul class="cities">
-         <?php
-          getPocasi("Trebic");
-
-          getPocasi("Dubai");
-
-          getPocasi("New York");
-
-          getPocasi("Tokyo");
-          ?>
-        </ul>
-    </div>
-  </section>
-  <footer class="page-footer">
-    <script src="script.js"></script>
-  </footer></body>
-</html>
